@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="root">
+      <input v-model="newItem" type="text" name="form" value="" placeholder="Inserisci item">
+      <button @click="addItem" type="button" name="button">Aggiungi</button>
+      <div class="notepad">
+        <ul>
+          <!-- per ogni elemento dell'array todoList creo un li con all'interno l'item corrente dell'array -->
+          <li @click="removeItem" v-for="(item,index) in todoList">
+            {{item}}
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>

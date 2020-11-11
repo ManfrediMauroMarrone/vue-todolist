@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notepad {
+  height: 800px;
+  width: 800px;
+  background-size: cover;
+  background-image: url(https://www.printsimple.eu/images/u/product-info/s/xd-collection-kraft-a5-notebook-with-sticky-notes.15501.4.1596635524.100.jpg);
+}
