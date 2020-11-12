@@ -15,12 +15,16 @@ var app = new Vue ({
   methods: {
 
     addItem() {
-      this.todoList.push(this.newItem)
+      // inserisco un nuovo item nella lista
+      this.todoList.push(this.newItem);
+      // resetto l'input
+      this.newItem = '';
     },
 
-    removeItem(index) {
-      this.todoList.splice(index, 1)
-    }
+    removeItem(itemIndex) {
+      // this.todoList.splice(index, 1)
+      this.$delete(this.todoList, index)
+    },
   }
 
 });

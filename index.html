@@ -5,18 +5,26 @@
     <title>To do list</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://kit.fontawesome.com/43febffcb7.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root">
-      <input v-model="newItem" type="text" name="form" value="" placeholder="Inserisci item">
-      <button @click="addItem" type="button" name="button">Aggiungi</button>
-      <div class="notepad">
-        <ul>
-          <!-- per ogni elemento dell'array todoList creo un li con all'interno l'item corrente dell'array -->
-          <li @click="removeItem" v-for="(item,index) in todoList">
-            {{item}}
-          </li>
-        </ul>
+
+      <div class="wrapper">
+        <div class="add">
+          <input @keyup.enter="addItem" v-model="newItem" type="text" name="form" value="" placeholder="Inserisci cose da fare">
+          <button @click="addItem" type="button" name="button">Aggiungi</button>
+
+        </div>
+        <div class="notepad">
+          <ul id="list">
+            <!-- per ogni elemento dell'array todoList creo un li con all'interno l'item corrente dell'array -->
+            <li @click="removeItem(index)" v-for="(item,index) in todoList">
+              <i class="fas fa-check"></i> {{item}}
+            </li>
+          </ul>
+
+        </div>
 
       </div>
     </div>
